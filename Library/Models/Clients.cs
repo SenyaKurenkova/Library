@@ -11,5 +11,6 @@ namespace Library.Models
         [DataType(DataType.Date)]
         public DateTime CreateDate { get; set; }
         public DateTime BirthDate { get; set; }
+        public virtual LibraryRecords LibRecs { get; set; }
     }
 }
