@@ -1,0 +1,25 @@
+﻿@using Library.Models
+@model IEnumerable<Clients>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width"/>
+        <title>List</title>
+    </head>
+    <body>
+        <h1>@ViewBag.LibClients</h1>
+        @{
+            foreach (var client in Model)
+            {
+                <div>
+                    <h2>Имя : @client.Name</h2>
+                    <p>Дата рождения  : @client.BirthDate.ToString("dd.MM.yyy")</p>>
+                </div>
+            }
+        }
+    </body>
+</html>
