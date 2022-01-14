@@ -12,6 +12,18 @@ namespace Library.Controllers
     {
         private readonly IAllClients _allClients;
         private readonly ILibsClients _libsClients;
-        //public LibsController(I)
+
+        public LibsController(IAllClients iAllClients, ILibsClients iLibClients)
+        {
+            _allClients = iAllClients;
+            _libsClients = iLibClients;
+        }
+
+        public ViewResult List()
+        {
+            ViewBag.LibClients = "Все книги";
+            var book = _libsClients.AllLibrary;
+            return View(book);
+        }
     }
 }
